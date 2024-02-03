@@ -1,0 +1,59 @@
+.largelaptop-hidden {
+  @media screen and (max-width: $xxl) {
+    display: none !important;
+  }
+}
+
+.largelaptop-visible {
+  @media screen and (min-width: calc($xxl + 1px)) {
+    display: none !important;
+  }
+}
+
+.laptop-hidden {
+  @media screen and (max-width: $xl) {
+    display: none !important;
+  }
+}
+
+.laptop-visible {
+  @media screen and (min-width: calc($xl + 1px)) {
+    display: none !important;
+  }
+}
+
+.netbook-hidden {
+  @media screen and (max-width: $lg) {
+    display: none !important;
+  }
+}
+
+.netbook-visible {
+  @media screen and (min-width: calc($lg + 1px)) {
+    display: none !important;
+  }
+}
+
+.tablet-hidden {
+  @media screen and (max-width: $md) {
+    display: none !important;
+  }
+}
+
+.tablet-visible {
+  @media screen and (min-width: calc($md + 1px)) {
+    display: none !important;
+  }
+}
+
+.mobile-hidden {
+  @media screen and (max-width: $sm) {
+    display: none !important;
+  }
+}
+
+.mobile-visible {
+  @media screen and (min-width: calc($sm + 1px)) {
+    display: none !important;
+  }
+}

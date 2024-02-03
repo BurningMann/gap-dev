@@ -1,12 +1,13 @@
 // Переменные, миксины, функции
 @import "helpers/variables";
-@import "helpers/mixins";
+@import "helpers/optimize";
+@import "helpers/media-classes";
 
 // Основное
-@import "base/fonts";
-@import "base/optimize";
-@import "base/media-classes";
 @import "base/general";
 
 // Блоки
-@import "../blocks/modules";
+@import "../blocks/modules/header/header";
+@import "../blocks/modules/footer/footer";
+@import "../blocks/modules/start-section/start-section";
+@import "../blocks/modules/company-section/company-section";

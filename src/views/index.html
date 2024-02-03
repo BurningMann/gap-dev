@@ -1,8 +1,13 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="ru" class="hidden-scrollbar">
   @@include("../blocks/modules/head/head.html")
   <body>
-    @@include("../blocks/modules/header/header.html") @@include("../blocks/modules/footer/footer.html")
-    @@include("../blocks/modules/scripts/scripts.html")
+    @@include("../blocks/modules/header/header.html")
+    <main class="page">
+      @@include("../blocks/modules/start-section/start-section.html")
+      @@include("../blocks/modules/company-section/company-section.html")
+    </main>
+
+    @@include("../blocks/modules/footer/footer.html") @@include("../blocks/modules/scripts/scripts.html")
   </body>
 </html>

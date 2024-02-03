@@ -1,0 +1,89 @@
+.company-section {
+  --box-size: 28rem;
+
+  position: relative;
+  background: url("../img/image 7-min.jpg") center bottom/cover no-repeat;
+
+  &__sky {
+    width: 100vw;
+    aspect-ratio: 260 / 53;
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    filter: blur(250px);
+    background: rgb(154, 137, 127);
+    z-index: 10;
+    border-radius: 50%;
+  }
+
+  &__wrapper {
+    position: relative;
+    z-index: 20;
+    padding-top: 16rem;
+    padding-bottom: 4rem;
+
+    @media screen and (max-width: $md) {
+      padding-top: 6rem;
+    }
+  }
+
+  &__content-box {
+    width: var(--box-size);
+    max-width: 100%;
+    margin-bottom: 8rem;
+
+    &.is-large {
+      width: 58rem;
+      margin-bottom: 0;
+    }
+  }
+
+  &__content-box-title {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+
+    &-name {
+      font-size: 4.8rem;
+      line-height: 80%;
+    }
+  }
+
+  &__content-box-text {
+    font-size: 2rem;
+    text-align: justify;
+    line-height: 110%;
+    letter-spacing: -2%;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    padding-bottom: 1.5rem;
+    margin-bottom: 1.5rem;
+
+    @media screen and (max-width: $sm) {
+      /* text-align: left; */
+      /*  font-size: 1.8rem; */
+    }
+  }
+
+  &__bottom-row {
+    @media screen and (min-width: $lg) {
+      padding-left: var(--box-size);
+    }
+  }
+
+  &__content-box-btn {
+    background: #fff;
+    border-radius: 3rem;
+    text-align: center;
+    height: 3rem;
+    padding: 0 1.2rem;
+    color: #626262;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+    font-weight: 500;
+  }
+}
