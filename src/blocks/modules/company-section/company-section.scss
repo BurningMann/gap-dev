@@ -2,7 +2,7 @@
   --box-size: 28rem;
 
   position: relative;
-  background: url("../img/image 7-min.jpg") center bottom/cover no-repeat;
+  background: url("../img/company-section-bg.jpg") center bottom/cover no-repeat;
 
   &__sky {
     width: 100vw;
@@ -85,5 +85,78 @@
     align-items: center;
     gap: 4px;
     font-weight: 500;
+  }
+
+  &__rock {
+    position: absolute;
+    right: 0;
+    top: 0;
+
+    @media screen and (max-width: $lg) {
+      top: 30%;
+    }
+
+    @media screen and (max-width: $md) {
+      position: relative;
+      margin-top: 6rem;
+    }
+
+    .rock-1 {
+      animation: rockFly1 4s forwards infinite;
+      width: 76rem;
+
+      @media screen and (max-width: $lg) {
+        width: 40rem;
+      }
+    }
+
+    .rock-2 {
+      position: absolute;
+      left: 10%;
+      top: 0;
+      animation: rockFly2 4s forwards infinite;
+      width: 14rem;
+
+      @media screen and (max-width: $lg) {
+        width: 9rem;
+      }
+    }
+
+    .rock-3 {
+      position: absolute;
+      right: 5%;
+      bottom: 20%;
+      animation: rockFly3 4s forwards infinite;
+      width: 13.7rem;
+
+      @media screen and (max-width: $lg) {
+        width: 8rem;
+      }
+    }
+  }
+}
+
+@keyframes rockFly1 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -3rem, 0);
+  }
+}
+@keyframes rockFly2 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, 3rem, 0);
+  }
+}
+@keyframes rockFly3 {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(0, -4rem, 0);
   }
 }

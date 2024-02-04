@@ -134,9 +134,11 @@
       max-height: initial;
       transition: 0.3s;
       z-index: 10;
+      opacity: 0;
 
       &.is-active {
         transform: translate3d(-50%, -50%, 0) scale(1);
+        opacity: 1;
       }
     }
   }

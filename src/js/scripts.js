@@ -3,13 +3,9 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { ScrollToPlugin } from 'gsap/ScrollToPlugin';
 
-import Swiper from 'swiper';
-import { Navigation, Pagination } from 'swiper/modules';
+/* import Swiper from 'swiper';
+import { Navigation, Pagination } from 'swiper/modules'; */
 
-// import Swiper and modules styles
-/* import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination'; */
 /* Base scripts */
 
 /* Проверка на safari */
@@ -148,6 +144,10 @@ setTimeout(() => {
 
   requestAnimationFrame(raf);
 }, 0);
+
+Fancybox.bind('[data-fancybox]', {
+  Hash: false,
+});
 
 /* file input */
 

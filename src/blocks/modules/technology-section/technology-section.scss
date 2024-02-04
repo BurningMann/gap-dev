@@ -1,0 +1,94 @@
+.technology-section {
+  padding-top: 23rem;
+  margin-top: -15rem;
+  position: relative;
+  z-index: 3;
+  padding-bottom: 30rem;
+  background: #fff;
+  border-radius: 0 0 3rem 3rem;
+  overflow: hidden;
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: url("../img/technology-section-bg.png") center bottom/cover no-repeat;
+    height: 30rem;
+    display: block;
+    z-index: 2;
+  }
+
+  &__wrapper {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 8rem;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+    }
+  }
+
+  &__content-box {
+    width: var(--content-sidebar-width);
+    display: flex;
+    gap: 64px;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      gap: 32px;
+      width: 100%;
+    }
+  }
+
+  &__col-heading {
+    background: var(--c-black);
+    font-size: 2rem;
+    height: 3.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4rem;
+    width: max-content;
+    padding: 0 1.2rem;
+    margin-bottom: 3.2rem;
+  }
+
+  &__col-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.4rem;
+    align-items: flex-start;
+
+    @media screen and (max-width: $lg) {
+      flex-direction: row;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    height: 2.9rem;
+    border-radius: 3rem;
+    border: 1px solid var(--c-black);
+    color: var(--c-black);
+    padding: 0 1.2rem;
+    font-weight: 500;
+
+    will-change: transform;
+    transform: translate(-30px, 0);
+    opacity: 0;
+
+    svg {
+      @media screen and (max-width: $lg) {
+        width: 2rem;
+        display: block;
+      }
+    }
+  }
+}

@@ -27,7 +27,6 @@ if (startSectionLogo) {
     items[activeItem].classList.add('is-active');
     rotate += 360 / items.length;
     shine.style.transform = `rotate(${rotate}deg)`;
-    console.log(bracketCollors[activeItem].left);
     leftBracket.style.fill = bracketCollors[activeItem].left;
     rightBracket.style.fill = bracketCollors[activeItem].right;
 

@@ -1,6 +1,8 @@
 :root {
   --c-prime: #28e0b4;
   --c-black: #060910;
+
+  --content-sidebar-width: 88rem;
 }
 
 body,
@@ -91,7 +93,7 @@ canvas {
   /* max-width: 1460px; */
   margin: 0 auto;
   position: relative;
-  padding: 0 16px;
+  padding: 0 1.6rem;
 }
 
 .custom-scrollbar {
@@ -404,6 +406,15 @@ canvas {
   }
 }
 
+.sub20 {
+  font-size: 2rem;
+  line-height: 110%;
+
+  @media screen and (max-width: $sm) {
+    font-size: 1.8rem;
+  }
+}
+
 h1,
 .h1 {
   font-size: 3.2rem;
@@ -431,6 +442,14 @@ h2,
   font-size: 6.4rem;
   line-height: 120%;
 
+  @media screen and (max-width: $lg) {
+    font-size: 4.8rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    font-size: 4rem;
+  }
+
   /*   @media screen and (max-width: $sm) {
     font-size: 2.6rem;
   } */
@@ -443,6 +462,37 @@ h2,
   display: flex;
   align-items: center;
   margin-bottom: 12.6rem;
+
+  @media screen and (max-width: $sm) {
+    margin-bottom: 8rem;
+    padding-left: 2rem;
+    min-height: 4rem;
+  }
+
+  &.is-black {
+    color: var(--c-black);
+  }
+
+  &.is-center {
+    margin: 0 auto 7rem;
+    position: relative;
+    text-align: center;
+    border: none;
+    justify-content: center;
+    padding: 0;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 8rem;
+      height: 0.2rem;
+      background: var(--c-prime);
+      position: absolute;
+      bottom: -2rem;
+      left: 50%;
+      transform: translate(-50%, 0);
+    }
+  }
 }
 
 .callback-form {
@@ -452,5 +502,31 @@ h2,
 
   .checkbox-input {
     padding: 0.8rem 0;
+  }
+}
+
+ul {
+  padding-left: 2rem;
+
+  li {
+    list-style-type: disc;
+    font-weight: 500;
+    line-height: 140%;
+  }
+}
+
+.swiper-button {
+  cursor: pointer;
+  &.swiper-button-disabled {
+    opacity: 0.2;
+    cursor: initial;
+  }
+}
+
+.swiper-pagination-bullet {
+  background: #fff;
+  opacity: 0.8;
+  &.swiper-pagination-bullet-active {
+    background: var(--c-prime);
   }
 }
