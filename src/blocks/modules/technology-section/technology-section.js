@@ -29,7 +29,6 @@ if (servicesSection) {
       start: 'top 50%',
       end: `bottom 50%`,
       onEnter: () => {
-        console.log(111);
         tl.play();
       },
     },

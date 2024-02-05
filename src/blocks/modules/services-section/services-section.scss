@@ -3,9 +3,11 @@
   z-index: 4;
   &__wrapper {
     padding-top: 15rem;
+    padding-bottom: 5rem;
     position: relative;
     background: url("../img/services-section-bg.jpg") center bottom/cover no-repeat;
-    height: 150rem;
+    /* background-attachment: fixed; */
+    /* height: 150rem; */
   }
 
   &__bottom {
@@ -46,19 +48,23 @@
 .service-row {
   --line-height: 8rem;
 
+  @media screen and (max-width: $lg) {
+    --line-height: 6rem;
+  }
+
   position: relative;
-  /* margin-bottom: 4rem; */
-  /* height: 100svh; */
+  height: 100svh;
 
-  /*   position: absolute;
-  top: 0;
-  left: 0;
-  right: 0; */
+  @media screen and (max-width: $lg) {
+    height: auto;
+    margin-bottom: 4rem;
 
-  /*   height: 100svh; */
+    &:last-child {
+      margin-bottom: 0;
+    }
+  }
 
   &__container {
-    /* height: 100svh; */
     position: relative;
   }
 
@@ -69,32 +75,45 @@
     overflow: hidden;
     transition: 0.5s ease-in-out;
 
-    &::after {
-      content: "";
-      display: block;
-      width: 100%;
-      height: 4rem;
-      border-left: 1px solid rgba(255, 255, 255, 0.2);
-      border-right: 1px solid rgba(255, 255, 255, 0.2);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-      border-radius: 0 0 2rem 2rem;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+    @media screen and (max-width: $lg) {
+      height: auto;
     }
+  }
 
-    &.is-open {
-      height: 100svh;
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 4rem;
+    border-left: 1px solid rgba(255, 255, 255, 0.2);
+    border-right: 1px solid rgba(255, 255, 255, 0.2);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 0 0 2rem 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  &.is-open {
+    height: 100svh;
+
+    @media screen and (max-width: $lg) {
+      height: auto;
     }
   }
 
   &__line {
-    /* animation: scroll 20s linear infinite; */
+    animation: scroll 15s linear infinite;
     display: flex;
     align-items: flex-start;
     gap: 2.3rem;
     width: calc(100vw * 2);
+    margin-bottom: 4rem;
     height: var(--line-height);
+
+    @media screen and (max-width: $lg) {
+      height: auto;
+    }
   }
 
   &__line-box {
@@ -103,11 +122,16 @@
     align-items: center;
     gap: 2.3rem;
     flex-shrink: 0;
+    width: 100vw;
+    overflow: hidden;
+
+    @media screen and (max-width: $lg) {
+      font-size: 2.4rem;
+    }
 
     span {
       display: flex;
       align-items: center;
-      height: 2.6rem;
     }
 
     img {
@@ -116,12 +140,22 @@
     }
   }
 
+  &__line-box-item {
+    display: flex;
+    align-items: center;
+    gap: 2.3rem;
+    flex-shrink: 0;
+  }
+
   &__content-box {
     display: flex;
     position: relative;
     gap: 32rem;
-    /*     max-height: 0;
-    overflow: hidden; */
+
+    @media screen and (max-width: $lg) {
+      flex-direction: column;
+      gap: 6rem;
+    }
   }
 
   &__content-left {
@@ -168,6 +202,6 @@
     transform: translateX(0);
   }
   to {
-    transform: translateX(calc(-100% - 20px));
+    transform: translateX(calc(-50% - 2.3rem));
   }
 }

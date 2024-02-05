@@ -7,27 +7,33 @@ const servicesSection = document.querySelector('.services-section');
 if (servicesSection) {
   const servicesCointainer = servicesSection.querySelectorAll('.service-row__container');
   const services = servicesSection.querySelectorAll('.service-row');
-
-  /* services.forEach((el) => {
-    const contentBox = el.querySelector('.service-row__box');
-    gsap.to(el, {
-      scrollTrigger: {
-        trigger: el,
-        start: 'top top',
-        end: `top+=${window.innerHeight}px top`,
-        pin: true,
-        markers: true,
-        onEnter: () => {
-          contentBox.classList.add('is-open');
-          console.log(4449);
+  const headerHeight = document.querySelector('.header').offsetHeight;
+  if (window.innerWidth > 1024) {
+    services.forEach((el) => {
+      const contentBox = el.querySelector('.service-row__box');
+      gsap.to(el, {
+        scrollTrigger: {
+          trigger: el,
+          start: `top top+=${headerHeight + 20}px`,
+          end: `bottom top`,
+          pin: true,
+          /* markers: true, */
+          onEnter: () => {
+            contentBox.classList.add('is-open');
+          },
+          onEnterBack: () => {
+            contentBox.classList.add('is-open');
+          },
+          /*         onLeave: () => {
+            contentBox.classList.remove('is-open');
+          }, */
+          onLeaveBack: () => {
+            contentBox.classList.remove('is-open');
+          },
         },
-        onLeave: () => {
-          contentBox.classList.remove('is-open');
-          console.log(4449);
-        },
-      },
+      });
     });
-  }); */
+  }
 
   /*   gsap.to('.service-row', {
     yPercent: -100,
@@ -167,7 +173,6 @@ if (servicesSection) {
       start: '30% 50%',
       end: `bottom 50%`,
       onEnter: () => {
-        console.log(4449);
         _text.show();
       },
     },
