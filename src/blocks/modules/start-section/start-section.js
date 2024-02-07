@@ -5,8 +5,8 @@ if (startSectionLogo) {
   const shine = startSectionLogo.querySelector('.start-section-logo__center-shine-container');
   const shineBig = startSectionLogo.querySelector('.start-section-logo__shine-big');
   const shineSmall = startSectionLogo.querySelector('.start-section-logo__shine-small');
-  const leftBracket = startSectionLogo.querySelector('.start-section-logo__bracket.is-bracket-left');
-  const rightBracket = startSectionLogo.querySelector('.start-section-logo__bracket.is-bracket-right');
+  const leftBracket = startSectionLogo.querySelectorAll('.start-section-logo__bracket.is-bracket-left');
+  const rightBracket = startSectionLogo.querySelectorAll('.start-section-logo__bracket.is-bracket-right');
 
   const bracketCollors = [
     { left: '#F9AF9C', right: '#9E97C1', shineBig: '#F6D6E3', shineSmall: '#FFFFFF' },
@@ -27,8 +27,8 @@ if (startSectionLogo) {
     items[activeItem].classList.add('is-active');
     rotate += 360 / items.length;
     shine.style.transform = `rotate(${rotate}deg)`;
-    leftBracket.style.fill = bracketCollors[activeItem].left;
-    rightBracket.style.fill = bracketCollors[activeItem].right;
+    leftBracket.forEach((el) => (el.style.fill = bracketCollors[activeItem].left));
+    rightBracket.forEach((el) => (el.style.fill = bracketCollors[activeItem].right));
 
     shineBig.style.fill = bracketCollors[activeItem].shineBig;
     shineSmall.style.fill = bracketCollors[activeItem].shineSmall;

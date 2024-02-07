@@ -24,7 +24,7 @@ headerMobile.addEventListener('click', () => {
 });
 
 const links = document.querySelectorAll('.header__link');
-const siteSections = document.querySelectorAll('section');
+const siteSections = document.querySelectorAll('.navigate-section');
 
 links.forEach((el) => {
   el.addEventListener('click', (e) => {
@@ -54,6 +54,7 @@ siteSections.forEach((el) => {
       trigger: el,
       start: 'top bottom',
       end: `bottom bottom`,
+      /*       markers: true, */
       onEnter: () => {
         setActiveLink(el.id);
       },

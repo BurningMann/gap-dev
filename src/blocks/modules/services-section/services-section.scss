@@ -78,6 +78,14 @@
     @media screen and (max-width: $lg) {
       height: auto;
     }
+
+    &.is-open {
+      height: 100svh;
+
+      @media screen and (max-width: $lg) {
+        height: auto;
+      }
+    }
   }
 
   &::after {
@@ -92,14 +100,6 @@
     position: absolute;
     bottom: 0;
     left: 0;
-  }
-
-  &.is-open {
-    height: 100svh;
-
-    @media screen and (max-width: $lg) {
-      height: auto;
-    }
   }
 
   &__line {
