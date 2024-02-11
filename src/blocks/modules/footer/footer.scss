@@ -23,7 +23,7 @@
     justify-content: space-between;
 
     @media screen and (max-width: $md) {
-      flex-direction: column-reverse;
+      flex-direction: column;
       gap: 3rem;
     }
   }

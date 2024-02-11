@@ -81,11 +81,11 @@ if (servicesSection) {
         this.tl.to(
           spans[i],
           {
-            duration: Math.random() * 0.35 + 0.35,
+            duration: Math.random() * 1 + 0.35,
             ease: 'bounce.in',
             opacity: 1,
           },
-          Math.random() * 0.5
+          Math.random() * 0.7
         );
       }
     }
@@ -184,8 +184,20 @@ if (servicesSection) {
       start: '30% 50%',
       end: `bottom 50%`,
     },
-    duration: Math.random() * 0.35 + 0.35,
+    duration: Math.random() * 1 + 0.35,
     ease: 'bounce.in',
     opacity: 1,
+  });
+
+  const marquee = document.querySelectorAll('.service-row__line');
+  marquee.forEach((el) => {
+    const lineBox = el.querySelector('.service-row__line-box');
+    const lineItem = el.querySelector('.service-row__line-box-item');
+    const itemWidth = lineItem.offsetWidth;
+
+    for (let i = 0; i < Math.ceil(2560 / itemWidth); i++) {
+      lineBox.appendChild(lineItem.cloneNode(true));
+    }
+    el.appendChild(lineBox.cloneNode(true));
   });
 }

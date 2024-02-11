@@ -48,19 +48,21 @@ function setActiveLink(id) {
   }
 }
 
-siteSections.forEach((el) => {
-  gsap.to(el, {
-    scrollTrigger: {
-      trigger: el,
-      start: 'top bottom',
-      end: `bottom bottom`,
-      /*       markers: true, */
-      onEnter: () => {
-        setActiveLink(el.id);
+setTimeout(() => {
+  siteSections.forEach((el) => {
+    gsap.to(el, {
+      scrollTrigger: {
+        trigger: el,
+        start: 'top bottom',
+        end: `bottom bottom`,
+        /* markers: true, */
+        onEnter: () => {
+          setActiveLink(el.id);
+        },
+        onEnterBack: () => {
+          setActiveLink(el.id);
+        },
       },
-      onEnterBack: () => {
-        setActiveLink(el.id);
-      },
-    },
+    });
   });
-});
+}, 0);

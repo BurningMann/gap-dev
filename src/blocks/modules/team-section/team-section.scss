@@ -16,6 +16,12 @@
     @media screen and (max-width: $lg) {
       flex-direction: column;
     }
+
+    @media screen and (max-width: $sm) {
+      .section-title {
+        margin-bottom: 2rem;
+      }
+    }
   }
 
   &__wrapper-top-text {
@@ -27,6 +33,10 @@
     @media screen and (max-width: $lg) {
       text-align: left;
       font-size: 2.4rem;
+    }
+
+    @media screen and (max-width: $sm) {
+      font-size: 2rem;
     }
   }
 
