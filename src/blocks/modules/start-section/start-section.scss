@@ -78,6 +78,9 @@
 
   &__bottom-right {
     max-width: 59rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   &__bottom-links {
@@ -106,6 +109,7 @@
 
   @media screen and (max-width: $sm) {
     flex-direction: column;
+    padding: 2rem 0 8rem;
   }
 
   &__text-box {
