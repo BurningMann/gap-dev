@@ -31,10 +31,8 @@ links.forEach((el) => {
     e.preventDefault();
     const id = el.getAttribute('href')?.slice(1);
     if (!id) return;
-    const target = document.getElementById(id);
-    if (target) {
-      target.scrollIntoView({ behavior: 'smooth' });
-    }
+    const target = id === 'start' ? document.querySelector('body') : document.getElementById(id);
+    target.scrollIntoView({ behavior: 'smooth' });
   });
 });
 

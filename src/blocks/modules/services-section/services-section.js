@@ -81,11 +81,11 @@ if (servicesSection) {
         this.tl.to(
           spans[i],
           {
-            duration: Math.random() * 1 + 0.35,
+            duration: Math.random() * 0.7 + 0.35,
             ease: 'bounce.in',
             opacity: 1,
           },
-          Math.random() * 0.7
+          Math.random() * 0.5
         );
       }
     }
@@ -184,7 +184,7 @@ if (servicesSection) {
       start: '30% 50%',
       end: `bottom 50%`,
     },
-    duration: Math.random() * 1 + 0.35,
+    duration: Math.random() * 0.7 + 0.35,
     ease: 'bounce.in',
     opacity: 1,
   });
@@ -199,5 +199,6 @@ if (servicesSection) {
       lineBox.appendChild(lineItem.cloneNode(true));
     }
     el.appendChild(lineBox.cloneNode(true));
+    el.classList.add('is-animate');
   });
 }

@@ -1,0 +1,59 @@
+<div class="popup order_popup">
+  <div class="popup__wrapper">
+    <div class="popup__inner">
+      <div class="popup__close js-close-popup">
+        <svg width="42" height="42" viewBox="0 0 42 42" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect width="42" height="42" rx="6" fill="white"/>
+          <path d="M16 16L26 26" stroke="black"/>
+          <path d="M26 16L16 26" stroke="black"/>
+        </svg>          
+      </div>
+      <div class="popup__content">
+        <div class="popup__form-container">
+          <form action="#" class="callback-form">
+            <label class="form-input is-required">
+              <input type="text" class="input" placeholder=" " />
+              <div class="form-input__placeholder">Имя</div>
+            </label>
+            <label class="form-input is-required">
+              <input type="text" class="input" placeholder=" " />
+              <div class="form-input__placeholder">Телефон</div>
+            </label>
+            <label class="form-input">
+              <input type="text" class="input" placeholder=" " />
+              <div class="form-input__placeholder">Почта</div>
+            </label>
+            <label class="form-input is-textarea">
+              <textarea class="input textarea" placeholder=" "></textarea>
+              <div class="form-input__placeholder">Описание запроса</div>
+            </label>
+            <label class="form-input">
+              <div class="file-input">
+                <input type="file" placeholder="Приложить файл" />
+                <div class="file-input__button button is-ghost">
+                  <span class="file-input__plus">+</span> <span class="file-input__name">Приложить файл</span>
+                </div>
+              </div>
+            </label>
+            <label class="checkbox-input">
+              <input type="checkbox" name="privacy" />
+              <div class="checkbox-input__check">
+                <div class="checkbox-input__check-icon">
+                  <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M1 5H9" stroke="#060910" stroke-linecap="round" stroke-linejoin="round" />
+                    <path d="M5 9L5 1" stroke="#060910" stroke-linecap="round" stroke-linejoin="round" />
+                  </svg>
+                </div>
+              </div>
+              <div class="checkbox-input__placeholder">
+                Согласие на обработку личных данных в соответствии с
+                <a href="#" target="_blank">политика конфиденциальности</a>
+              </div>
+            </label>
+            <button type="submit" class="button is-black">Отправить</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

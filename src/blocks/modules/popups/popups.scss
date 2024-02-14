@@ -1,0 +1,59 @@
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  height: 100lvh;
+  z-index: 9999;
+  background: rgba(23, 23, 23, 0.8);
+  padding: 10vh 2rem 2rem;
+  overflow-y: auto;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s;
+
+  &.is-active {
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__wrapper {
+    position: relative;
+    width: 100%;
+    max-width: 58rem;
+    margin: 0 auto;
+    background: #ffffff;
+    border-radius: 2rem;
+    overflow: hidden;
+    padding: 6rem 2rem;
+
+    @media screen and (max-width: $lg) {
+      padding: 6rem 2rem 2rem;
+    }
+  }
+
+  &__close {
+    position: absolute;
+    top: 1.6rem;
+    right: 1.6rem;
+    z-index: 50;
+    cursor: pointer;
+  }
+
+  &__title {
+    color: var(--c-black);
+    flex-shrink: 0;
+    margin-bottom: 4rem;
+  }
+
+  &__content {
+    width: 100%;
+  }
+
+  &__form-container {
+    width: 100%;
+    max-width: 28rem;
+    margin: 0 auto;
+  }
+}

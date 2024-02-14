@@ -130,19 +130,32 @@ var pictureObserver = lozad('.lozad', {
   threshold: 0.1
 })
 pictureObserver.observe() */
-
-const lenis = new Lenis();
 gsap.registerPlugin(ScrollTrigger);
-setTimeout(() => {
-  lenis.on('scroll', ScrollTrigger.update);
+
+window.startLenis = () => {
+  window.lenis = new Lenis();
+  document.querySelector('html').classList.remove('noskroll');
+  document.querySelector('body').classList.remove('noskroll');
+
+  window.lenis.on('scroll', ScrollTrigger.update);
   gsap.ticker.lagSmoothing(0);
 
   function raf(time) {
-    lenis.raf(time);
+    window.lenis.raf(time);
     requestAnimationFrame(raf);
   }
 
   requestAnimationFrame(raf);
+};
+
+window.stopLenis = () => {
+  window.lenis.destroy();
+  document.querySelector('html').classList.add('noskroll');
+  document.querySelector('body').classList.add('noskroll');
+};
+
+setTimeout(() => {
+  window.startLenis();
 }, 0);
 
 Fancybox.bind('[data-fancybox]', {
