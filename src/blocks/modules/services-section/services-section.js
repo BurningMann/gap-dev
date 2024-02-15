@@ -8,7 +8,7 @@ if (servicesSection) {
   const servicesCointainer = servicesSection.querySelectorAll('.service-row__container');
   const services = servicesSection.querySelectorAll('.service-row');
   const headerHeight = document.querySelector('.header').offsetHeight;
-  if (window.innerWidth > 1024) {
+  /*  if (window.innerWidth > 1024) {
     services.forEach((el) => {
       const contentBox = el.querySelector('.service-row__box');
       gsap.to(el, {
@@ -17,23 +17,23 @@ if (servicesSection) {
           start: `top top+=${headerHeight + 20}px`,
           end: `bottom top`,
           pin: true,
-          /* markers: true, */
+          markers: true,
           onEnter: () => {
             contentBox.classList.add('is-open');
           },
           onEnterBack: () => {
             contentBox.classList.add('is-open');
           },
-          /*         onLeave: () => {
+                  onLeave: () => {
             contentBox.classList.remove('is-open');
-          }, */
+          },
           onLeaveBack: () => {
             contentBox.classList.remove('is-open');
           },
         },
       });
     });
-  }
+  } */
 
   /*   gsap.to('.service-row', {
     yPercent: -100,

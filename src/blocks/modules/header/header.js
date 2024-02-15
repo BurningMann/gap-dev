@@ -23,19 +23,7 @@ headerMobile.addEventListener('click', () => {
   }
 });
 
-const links = document.querySelectorAll('.header__link');
 const siteSections = document.querySelectorAll('.navigate-section');
-
-links.forEach((el) => {
-  el.addEventListener('click', (e) => {
-    e.preventDefault();
-    const id = el.getAttribute('href')?.slice(1);
-    if (!id) return;
-    const target = id === 'start' ? document.querySelector('body') : document.getElementById(id);
-    target.scrollIntoView({ behavior: 'smooth' });
-  });
-});
-
 function setActiveLink(id) {
   if (id) {
     const activeLinks = document.querySelectorAll('.header__link.is-active');

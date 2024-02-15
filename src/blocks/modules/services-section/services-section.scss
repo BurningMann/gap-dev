@@ -53,16 +53,21 @@
   }
 
   position: relative;
-  height: 100svh;
+  height: auto;
+  margin-bottom: 4rem;
 
-  @media screen and (max-width: $lg) {
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  /*   @media screen and (max-width: $lg) {
     height: auto;
     margin-bottom: 4rem;
 
     &:last-child {
       margin-bottom: 0;
     }
-  }
+  } */
 
   &__container {
     position: relative;
@@ -71,11 +76,11 @@
   &__box {
     position: relative;
     padding-bottom: 8rem;
-    height: var(--line-height);
+    /* height: var(--line-height); */
     overflow: hidden;
     transition: 0.5s ease-in-out;
-
-    @media screen and (max-width: $lg) {
+    height: auto;
+    /*  @media screen and (max-width: $lg) {
       height: auto;
     }
 
@@ -85,7 +90,7 @@
       @media screen and (max-width: $lg) {
         height: auto;
       }
-    }
+    } */
   }
 
   &::after {
@@ -201,7 +206,7 @@
   &__content-right-button {
     margin-top: 4rem;
     width: 100%;
-   
+
     @media screen and (min-width: $sm) {
       max-width: 28rem;
     }

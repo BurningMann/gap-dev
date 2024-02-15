@@ -158,9 +158,52 @@ setTimeout(() => {
   window.startLenis();
 }, 0);
 
+/* navigation */
+const navLinks = document.querySelectorAll('.js-navigate-link');
+navLinks.forEach((el) => {
+  el.addEventListener('click', (e) => {
+    e.preventDefault();
+    const id = el.getAttribute('href')?.slice(1);
+    if (!id) return;
+    const offset = el.dataset.headerOffset ? 0 - document.querySelector('.header').offsetHeight : 0;
+    const target = id === 'start' ? document.querySelector('body') : document.getElementById(id);
+    window.lenis.scrollTo(target, { offset });
+  });
+});
+
+/* Start fansybox */
 Fancybox.bind('[data-fancybox]', {
   Hash: false,
 });
+
+/* Start phone mask */
+
+import { MaskInput } from 'maska';
+
+(() => {
+  const maskList = [
+    {
+      name: 'Russia',
+      code: '+7',
+      iso: 'RU',
+      flag: 'https://cdn.kcak11.com/CountryFlags/countries/ru.svg',
+      mask: '(###)###-##-##',
+    },
+    {
+      name: 'Belarus',
+      code: '+375',
+      iso: 'BY',
+      flag: 'https://cdn.kcak11.com/CountryFlags/countries/by.svg',
+      mask: '(##)###-##-##',
+    },
+  ];
+
+  new MaskInput('input', {
+    mask: `${maskList[0].code}${maskList[0].mask}`,
+    eager: true,
+    onMaska: (detail) => console.log(detail.completed),
+  });
+})();
 
 /* file input */
 

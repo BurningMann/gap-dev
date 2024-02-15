@@ -17,9 +17,9 @@ html {
   font-size: 0.625vw;
   height: stretch;
 
-  @media screen and (max-width: $xl) {
+  /*   @media screen and (max-width: $xl) {
     font-size: 0.825vw;
-  }
+  } */
 
   @media screen and (max-width: $lg) {
     font-size: 62.5%;
@@ -136,15 +136,6 @@ canvas {
   cursor: pointer;
   border: 1px solid transparent;
 
-  /* @media screen and (max-width: $md) {
-    height: 4.9rem;
-  }
-
-  @media screen and (max-width: $sm) {
-    padding: 0 2rem;
-    font-size: 1.3rem;
-  } */
-
   &::before {
     content: "[ ";
     transition: 0.3s;
@@ -166,6 +157,16 @@ canvas {
   &.is-primary {
     color: var(--c-black);
     background: #ffffff;
+
+    &:hover {
+      background: var(--c-prime);
+      color: #fff;
+
+      &::before,
+      &::after {
+        color: #fff;
+      }
+    }
   }
 
   &.is-black {
@@ -183,6 +184,16 @@ canvas {
     background: transparent;
     border-color: #fff;
     color: #fff;
+
+    &:hover {
+      background: #fff;
+      color: var(--c-black);
+
+      &::before,
+      &::after {
+        color: var(--c-black);
+      }
+    }
   }
 
   /* 
