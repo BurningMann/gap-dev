@@ -281,6 +281,57 @@ canvas {
   resize: none;
 }
 
+.phone-input {
+  &__mask-switch {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translate(0, -50%);
+    z-index: 5;
+    cursor: pointer;
+  }
+
+  &__main-icon {
+    width: 2.4rem;
+  }
+
+  &__dropdown-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4rem;
+    font-weight: 500;
+    padding: 10px;
+    transition: 0.3s;
+    color: var(--c-black);
+
+    &:hover {
+      background: #e7e7e7;
+    }
+  }
+
+  &__mask-switch-dropdown {
+    width: max-content;
+    background: #fff;
+    padding: 5px 0;
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    transform: translate(0, 5px);
+    position: absolute;
+    top: calc(100% + 5px);
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid var(--c-prime);
+
+    &.is-active {
+      opacity: 1;
+      visibility: visible;
+      transform: translate(0, 0);
+    }
+  }
+}
+
 .file-input {
   max-width: 100%;
 

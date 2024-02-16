@@ -27,9 +27,18 @@ if (servicesSection) {
     scrollTrigger: {
       trigger: '.technology-section__wrapper',
       start: 'top 50%',
-      end: `bottom 50%`,
+      end: `bottom+=50% 50%`,
       onEnter: () => {
         tl.play();
+      },
+      onEnterBack: () => {
+        tl.play();
+      },
+      onLeave: () => {
+        tl.reverse();
+      },
+      onLeaveBack: () => {
+        tl.reverse();
       },
     },
   });

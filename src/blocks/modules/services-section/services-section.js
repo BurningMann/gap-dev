@@ -175,6 +175,15 @@ if (servicesSection) {
       onEnter: () => {
         _text.show();
       },
+      onEnterBack: () => {
+        _text.show();
+      },
+      onLeave: () => {
+        _text.hide();
+      },
+      onLeaveBack: () => {
+        _text.hide();
+      },
     },
   });
 

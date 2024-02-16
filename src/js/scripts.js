@@ -133,6 +133,7 @@ pictureObserver.observe() */
 gsap.registerPlugin(ScrollTrigger);
 
 window.startLenis = () => {
+  console.log('start');
   window.lenis = new Lenis();
   document.querySelector('html').classList.remove('noskroll');
   document.querySelector('body').classList.remove('noskroll');
@@ -198,10 +199,61 @@ import { MaskInput } from 'maska';
     },
   ];
 
-  new MaskInput('input', {
-    mask: `${maskList[0].code}${maskList[0].mask}`,
-    eager: true,
-    onMaska: (detail) => console.log(detail.completed),
+  const phoneInputs = document.querySelectorAll('.phone-input');
+
+  phoneInputs.forEach((el) => {
+    const input = el.querySelector('.input');
+    const dropdown = el.querySelector('.phone-input__mask-switch-dropdown');
+    const current = el.querySelector('.phone-input__mask-switch-current');
+    let mask = null;
+    function setMask(maskItem) {
+      mask = new MaskInput(input, {
+        mask: `${maskItem.code}${maskItem.mask}`,
+        eager: true,
+        onMaska: (detail) => {
+          if (detail.completed) {
+            el.classList.add('is-valid');
+          } else {
+            el.classList.remove('is-valid');
+          }
+        },
+      });
+    }
+    setMask(maskList[0]);
+
+    maskList.forEach((item) => {
+      var div = document.createElement('div');
+      div.innerHTML = `<div class="phone-input__dropdown-item"><img src="${item.flag}" class="phone-input__main-icon"> ${item.name} ${item.code}</div>`;
+      dropdown.appendChild(div);
+
+      div.addEventListener('click', (e) => {
+        current.innerHTML = `<img src="${item.flag}" class="phone-input__main-icon">`;
+        input.value = '+';
+        mask.destroy();
+        setMask(item);
+      });
+    });
+    current.innerHTML = `<img src="${maskList[0].flag}" class="phone-input__main-icon">`;
+
+    el.addEventListener('click', (e) => {
+      e.preventDefault();
+      e.stopPropagation();
+      dropdown.classList.toggle('is-active');
+    });
+
+    input.addEventListener('focus', () => {
+      if (!input.value) {
+        input.value = '+';
+      }
+    });
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!e.target.closest('.phone-input__mask-switch')) {
+      document
+        .querySelectorAll('.phone-input__mask-switch-dropdown.is-active')
+        .forEach((el) => el.classList.remove('is-active'));
+    }
   });
 })();
 

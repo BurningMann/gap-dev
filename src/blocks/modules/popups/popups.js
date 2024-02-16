@@ -27,5 +27,6 @@ closePopup.forEach((el) => {
 document.addEventListener('click', (e) => {
   if (e.target.classList.contains('popup')) {
     e.target.classList.remove('is-active');
+    window.startLenis();
   }
 });
