@@ -235,7 +235,7 @@ import { MaskInput } from 'maska';
     });
     current.innerHTML = `<img src="${maskList[0].flag}" class="phone-input__main-icon">`;
 
-    el.addEventListener('click', (e) => {
+    current.addEventListener('click', (e) => {
       e.preventDefault();
       e.stopPropagation();
       dropdown.classList.toggle('is-active');
