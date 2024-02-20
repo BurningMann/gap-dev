@@ -97,10 +97,6 @@ canvas {
 }
 
 .custom-scrollbar {
-  scrollbar-width: thin;
-  scrollbar-color: #000 #eee;
-  -ms-overflow-style: -ms-autohiding-scrollbar;
-
   &::-webkit-scrollbar {
     width: 6px;
     height: 6px;
@@ -109,6 +105,14 @@ canvas {
   &::-webkit-scrollbar-thumb {
     border-radius: 6px;
     background-color: #fff;
+  }
+  &::-webkit-scrollbar-track {
+    background: transparent;
+  }
+
+  @supports not selector(::-webkit-scrollbar) {
+    scrollbar-color: #000 #eee;
+    scrollbar-width: thin;
   }
 }
 
