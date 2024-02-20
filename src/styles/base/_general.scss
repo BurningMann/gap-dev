@@ -219,10 +219,6 @@ canvas {
     font-size: 1.3rem;
     font-weight: 500;
     line-height: 130%;
-
-    /*     @media screen and (max-width: $md) {
-      left: 2rem;
-    } */
   }
 
   &.is-required {
@@ -237,6 +233,16 @@ canvas {
   &.is-textarea {
     .form-input__placeholder {
       top: 2rem;
+    }
+  }
+
+  &.is-error {
+    .input {
+      border-color: var(--c-prime);
+    }
+
+    .checkbox-input__check {
+      border-color: var(--c-prime);
     }
   }
 }
@@ -255,6 +261,7 @@ canvas {
   position: relative;
   z-index: 2;
   font-size: 1.3rem;
+  border: 1px solid transparent;
 
   @media screen and (max-width: $md) {
     &:not(.textarea) {
@@ -639,5 +646,69 @@ html.lenis {
     @media screen and (max-width: $md) {
       font-size: 10rem;
     }
+  }
+}
+
+.custom-toast {
+  display: flex;
+  justify-content: center;
+  pointer-events: none;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 999999;
+  will-change: transform;
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(0, -50%) scale(0.9);
+
+  &.is-enter {
+    animation: toastEnter 0.2s ease-out forwards;
+  }
+
+  &.is-out {
+    animation: toastOut 0.2s ease-out forwards;
+  }
+
+  &__container {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    color: rgb(54, 54, 54);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 3px 10px, rgba(0, 0, 0, 0.05) 0px 3px 3px;
+    max-width: 350px;
+    pointer-events: auto;
+    padding: 0.8rem 1rem;
+    border-radius: 4px;
+    font-size: 1.2rem;
+    font-weight: 500;
+    min-height: 2rem;
+  }
+}
+
+@keyframes toastEnter {
+  0% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -50%) scale(0.9);
+  }
+  100% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 1rem) scale(1);
+  }
+}
+
+@keyframes toastOut {
+  0% {
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, 1rem) scale(1);
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+    transform: translate(0, -50%) scale(0.9);
   }
 }

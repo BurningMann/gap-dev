@@ -60,15 +60,6 @@
     margin-bottom: 0;
   }
 
-  /*   @media screen and (max-width: $lg) {
-    height: auto;
-    margin-bottom: 4rem;
-
-    &:last-child {
-      margin-bottom: 0;
-    }
-  } */
-
   &__container {
     position: relative;
   }
@@ -76,21 +67,9 @@
   &__box {
     position: relative;
     padding-bottom: 8rem;
-    /* height: var(--line-height); */
     overflow: hidden;
     transition: 0.5s ease-in-out;
     height: auto;
-    /*  @media screen and (max-width: $lg) {
-      height: auto;
-    }
-
-    &.is-open {
-      height: 100svh;
-
-      @media screen and (max-width: $lg) {
-        height: auto;
-      }
-    } */
   }
 
   &::after {
@@ -139,6 +118,7 @@
     span {
       display: flex;
       align-items: center;
+      flex-shrink: 0;
     }
 
     img {
@@ -176,9 +156,10 @@
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     gap: 4rem 8rem;
-  }
 
-  &__grid-item {
+    @media screen and (max-width: $sm) {
+      gap: 4rem;
+    }
   }
 
   &__grid-item-button {

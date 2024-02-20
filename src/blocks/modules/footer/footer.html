@@ -5,12 +5,12 @@
         <img src="./img/footer-logo.svg" alt="gap-dev" class="footer__logo"/>
       </div>
       <div class="footer__form-col">
-        <form action="#" class="callback-form">
+        <form action="#" class="callback-form js-validate-form">
           <label class="form-input is-required">
             <input type="text" class="input" placeholder=" " />
             <div class="form-input__placeholder">Имя</div>
           </label>
-          <label class="form-input is-required phone-input">
+          <label class="form-input is-required is-phone phone-input">
             <input type="text" class="input" placeholder=" " data-maska />
             <div class="form-input__placeholder">Телефон</div>
             <div class="phone-input__mask-switch">
@@ -18,7 +18,7 @@
               <div class="phone-input__mask-switch-dropdown"></div>
             </div>
           </label>
-          <label class="form-input">
+          <label class="form-input is-email">
             <input type="text" class="input" placeholder=" " />
             <div class="form-input__placeholder">Почта</div>
           </label>
@@ -34,8 +34,8 @@
               </div>
             </div>
           </label>
-          <label class="checkbox-input">
-            <input type="checkbox" name="privacy" />
+          <label class="form-input is-required is-checkbox checkbox-input">
+            <input type="checkbox" name="privacy" class="input" />
             <div class="checkbox-input__check">
               <div class="checkbox-input__check-icon">
                 <svg width="10" height="10" viewBox="0 0 10 10" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -70,3 +70,11 @@
     </div>
   </div>
 </footer>
+
+<div class="custom-toast">
+  <div class="custom-toast__container"> 
+    <div class="custom-toast__icon"></div>
+    <div class="custom-toast__text"></div>
+  </div>
+</div>
+
