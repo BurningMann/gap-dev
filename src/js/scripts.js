@@ -218,7 +218,7 @@ const toastData = {
   },
 };
 let toastTimeout = null;
-function activateToast(text, type, delay) {
+window.activateToast = (text, type, delay) => {
   const toast = document.querySelector('.custom-toast');
   if (!toast) return false;
 
@@ -239,56 +239,7 @@ function activateToast(text, type, delay) {
       toastText.innerHTML = '';
     }, 300);
   }, delay);
-}
-
-/* FORM ERRORS */
-const validateForms = document.querySelectorAll('.js-validate-form');
-validateForms.forEach((el) => {
-  el.addEventListener('submit', function (event) {
-    let errors = 0;
-    const fields = el.querySelectorAll('.form-input');
-    fields.forEach((field) => {
-      const input = field.querySelector('.input');
-      if (input) {
-        const mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-        if (field.classList.contains('is-checkbox') && field.classList.contains('is-required') && !input.checked) {
-          errors++;
-          field.classList.add('is-error');
-        } else if (field.classList.contains('is-email') && input.value && !input.value.match(mailformat)) {
-          errors++;
-          field.classList.add('is-error');
-        } else if (
-          field.classList.contains('is-required') &&
-          field.classList.contains('is-phone') &&
-          !field.classList.contains('is-valid')
-        ) {
-          errors++;
-          field.classList.add('is-error');
-        } else if (field.classList.contains('is-required') && !input.value) {
-          errors++;
-          field.classList.add('is-error');
-        }
-      }
-    });
-
-    if (errors) {
-      event.preventDefault();
-      activateToast('Заполните обязательные поля', 'error', 2000);
-      return false;
-    }
-  });
-});
-
-const fields = document.querySelectorAll('.js-validate-form .form-input');
-fields.forEach((field) => {
-  const input = field.querySelector('.input');
-  if (input) {
-    input.addEventListener('input', function () {
-      field.classList.remove('is-error');
-    });
-  }
-});
+};
 
 import './import/modules';
 import './import/components';
