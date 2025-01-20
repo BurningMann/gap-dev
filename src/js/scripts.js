@@ -241,5 +241,20 @@ window.activateToast = (text, type, delay) => {
   }, delay);
 };
 
+setTimeout(() => {
+  const marquee = document.querySelectorAll('.marquee-line');
+  marquee.forEach((el) => {
+    const lineBox = el.querySelector('.service-row__line-box');
+    const lineItem = el.querySelector('.service-row__line-box-item');
+    const itemWidth = lineItem.offsetWidth;
+
+    for (let i = 0; i < Math.ceil(2560 / itemWidth); i++) {
+      lineBox.appendChild(lineItem.cloneNode(true));
+    }
+    el.appendChild(lineBox.cloneNode(true));
+    el.classList.add('is-animate');
+  });
+}, 0);
+
 import './import/modules';
 import './import/components';

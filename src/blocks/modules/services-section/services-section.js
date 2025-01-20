@@ -204,7 +204,7 @@ if (servicesSection) {
       const lineBox = el.querySelector('.service-row__line-box');
       const lineItem = el.querySelector('.service-row__line-box-item');
       const itemWidth = lineItem.offsetWidth;
-  
+
       for (let i = 0; i < Math.ceil(2560 / itemWidth); i++) {
         lineBox.appendChild(lineItem.cloneNode(true));
       }

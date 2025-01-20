@@ -3,6 +3,20 @@
   --c-black: #060910;
 
   --content-sidebar-width: 88rem;
+  --case-content-sidebar-width: 118rem;
+  --footer-margin: 23rem;
+}
+
+@media screen and (max-width: $lg) {
+  :root {
+    --case-content-sidebar-width: 100%;
+  }
+}
+
+@media screen and (max-width: $md) {
+  :root {
+    --footer-margin: 14rem;
+  }
 }
 
 body,
@@ -44,6 +58,10 @@ body {
 .page {
   padding-top: 9rem;
   overflow: hidden;
+
+  &.no-footer-margin {
+    margin-bottom: calc(-1 * var(--footer-margin) - 3rem);
+  }
 }
 
 img {
@@ -689,6 +707,20 @@ html.lenis {
     font-weight: 500;
     min-height: 2rem;
   }
+}
+
+.custom-toast__icon {
+  flex-shrink: 0;
+}
+
+.custom-toast__icon svg {
+  width: 2.4rem;
+  height: 2.4rem;
+}
+
+.custom-toast__container {
+  width: max-content;
+  max-width: 90%;
 }
 
 @keyframes toastEnter {

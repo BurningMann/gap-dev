@@ -1,4 +1,4 @@
-const startSectionLogo = document.querySelector('.start-section-logo');
+const startSectionLogo = document.querySelector('.start-section-logo:not(.no-animate)');
 
 if (startSectionLogo) {
   const items = startSectionLogo.querySelectorAll('.start-section-logo__center img');

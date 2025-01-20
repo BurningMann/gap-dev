@@ -185,6 +185,17 @@
 
   &__center-shine-container {
     transition: 0.3s ease-in-out;
+
+    &.is-centred {
+      position: relative;
+
+      svg {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
   }
 
   &__shine-1 {
