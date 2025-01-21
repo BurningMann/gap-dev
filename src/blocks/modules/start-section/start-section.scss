@@ -90,6 +90,39 @@
     align-items: center;
     padding-top: 2rem;
   }
+
+  &.start-section--case {
+    @media screen and (min-width: $lg) {
+      height: calc(100lvh - 9rem);
+      margin-bottom: 0;
+
+      .container,
+      .start-section__wrapper {
+        height: 100%;
+      }
+
+      .start-section__wrapper {
+        justify-content: space-between;
+        padding-bottom: 4rem;
+      }
+
+      .start-section-logo {
+        padding: 0;
+      }
+
+      .start-section__top-left {
+        max-width: 90rem;
+      }
+    }
+
+    @media screen and (max-width: $sm) {
+      .start-section-logo__center img {
+        max-height: 20rem;
+        width: auto;
+        max-width: var(--center-width);
+      }
+    }
+  }
 }
 
 .start-section-logo {

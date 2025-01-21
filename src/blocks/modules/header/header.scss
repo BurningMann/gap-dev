@@ -1,9 +1,13 @@
 .header {
-  position: fixed;
+  position: absolute;
   top: 0;
   left: 0;
   right: 0;
   z-index: 100;
+
+  &:not(.header--case) {
+    position: fixed;
+  }
 
   @media screen and (min-width: $lg) {
     &::before {

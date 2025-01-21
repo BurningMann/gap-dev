@@ -69,6 +69,10 @@
   justify-content: flex-end;
 }
 
+.case-tasks-section {
+  padding-bottom: 0;
+}
+
 .case-tasks-section__grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -116,12 +120,24 @@
   position: relative;
   background: rgba(255, 255, 255, 0.95);
   border-radius: 3rem;
-  padding: 7rem 3rem 12rem 3rem;
+  padding: 6rem 3rem;
+
+  @media screen and (max-width: $lg) {
+    padding: 4rem 1.5rem 10rem;
+  }
 
   @media screen and (min-width: $xl) {
     &.is-row {
       display: flex;
       gap: 0 5rem;
+    }
+  }
+
+  @media screen and (min-width: $lg) {
+    &:first-child {
+      .solution-card__number {
+        transform: translate(-60%, 0);
+      }
     }
   }
 }
@@ -140,15 +156,15 @@
   transform: translate(-50%, 0);
 
   @media screen and (max-width: $lg) {
-    font-size: 12rem;
+    font-size: 8rem;
     left: 50%;
-    bottom: -1.5rem;
+    bottom: -1rem;
   }
 }
 
 .solution-card__content {
   color: #000;
-  max-width: 85rem;
+  max-width: 90rem;
   width: 100%;
   flex-shrink: 1;
 
