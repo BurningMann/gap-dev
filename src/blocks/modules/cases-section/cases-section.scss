@@ -1,0 +1,121 @@
+.cases-section {
+  padding-top: 23rem;
+
+  @media screen and (max-width: $lg) {
+    padding-top: 16rem;
+  }
+
+  @media screen and (max-width: $sm) {
+    padding-top: 8rem;
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+
+    @media screen and (max-width: $lg) {
+      overflow: visible;
+    }
+  }
+
+  .swiper-pagination {
+    bottom: -4rem;
+  }
+
+  .swiper,
+  .swiper-wrapper {
+    height: 100%;
+  }
+}
+
+.cases-section__wrapper {
+  display: grid;
+  grid-template-columns: 30rem 1fr;
+  gap: 2rem;
+  height: 43rem;
+
+  @media screen and (max-width: $lg) {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.cases-section__buttons {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+
+  @media screen and (max-width: $lg) {
+    display: none;
+  }
+
+  .swiper-button {
+    margin-top: 6rem;
+  }
+
+  svg {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.cases-section__presentation-link {
+  color: var(--c-prime);
+  display: block;
+}
+
+.cases-section__sidebar {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+
+  @media screen and (min-width: $lg) {
+    &::after {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 4rem;
+      border-top: 1px solid rgba(255, 255, 255, 0.2);
+      border-right: 1px solid rgba(255, 255, 255, 0.2);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 0 2rem 2rem 0;
+      position: absolute;
+      right: 0;
+      top: 0;
+    }
+  }
+}
+
+.case-card {
+  gap: 1.6rem;
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  display: grid;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: $lg) {
+    grid-template-rows: 1fr 2.4rem;
+  }
+}
+
+.case-card__img {
+  flex-shrink: 1;
+  border-radius: 2rem;
+  overflow: hidden;
+
+  @media screen and (max-width: $lg) {
+    aspect-ratio: 16 / 9;
+  }
+}
+
+.case-card__name {
+  color: #fff;
+  flex-shrink: 0;
+  transition: 0.3s;
+
+  .case-card:hover & {
+    color: var(--c-prime);
+  }
+}
